@@ -156,7 +156,6 @@ h1 {
 }
 
 .submenu {
-  display: none;
   position: absolute;
   top: 45px;
   left: -3px;
@@ -167,6 +166,8 @@ h1 {
   z-index: 2;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .submenu a {
@@ -175,6 +176,8 @@ h1 {
   font-size: 18px;
   border-left: 3px solid #fff;
   border-bottom: 3px solid #fff;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .submenu a:hover {
@@ -258,7 +261,7 @@ main h3 {
   z-index: -2;
 }
 
-.hot_places {
+.popular {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -273,12 +276,12 @@ main h3 {
 }
 
 @media (max-width: 1020px) {
-  .hot_places {
+  .popular {
     display: none;
   }
 }
 
-.hot_places p {
+.popular p {
   font-size: 18px;
   margin-bottom: 14px;
 }
@@ -296,6 +299,8 @@ main h3 {
   color: #fff;
   border-radius: 5px;
   font-size: 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .btn_purple {
@@ -417,7 +422,6 @@ main h3 {
 
 .card_details {
   padding: 15px 24px 20px;
-  position: relative;
 }
 
 @media (max-width: 500px) {
@@ -466,6 +470,10 @@ main h3 {
   margin-left: 1px;
 }
 
+.card_phone {
+  padding-bottom: 13px;
+}
+
 @media (max-width: 500px) {
   .card_phone {
     padding-bottom: 8px;
@@ -477,18 +485,6 @@ main h3 {
   height: 20px;
   margin-right: 12px;
   margin-left: 3px;
-}
-
-.card_tag {
-  position: absolute;
-  left: 346px;
-  top: 78px;
-}
-
-@media (max-width: 500px) {
-  .card_tag {
-    position: static;
-  }
 }
 
 .card_tag img {
@@ -573,5 +569,9 @@ footer a:hover {
   position: fixed;
   right: 28px;
   bottom: 145px;
+}
+
+.height-0 {
+  height: 0;
 }
 /*# sourceMappingURL=style.css.map */
