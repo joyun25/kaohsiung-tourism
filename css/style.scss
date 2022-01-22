@@ -33,7 +33,6 @@ $notoSansTc: 'Noto Sans TC', sans-serif; // 400, main
 // My CSS
 *{
     box-sizing: border-box;
-    // outline: 1px solid red;
 }
 
 body {
@@ -121,6 +120,9 @@ h1 {
     z-index: 2;
     box-shadow: $cardShadow;
     transition: all .3s;
+    @include mobile {
+        width: 300px;
+    }
     a {
         background: $transparentWhite;
         padding: 9px 12px 7px 9.5px;
@@ -151,6 +153,9 @@ main {
     margin: 0 auto;
     @include pad {
         padding: 40px 20px;
+    }
+    @include mobile {
+        padding: 40px 10px;
     }
 }
 
@@ -280,7 +285,13 @@ main {
             width: 300px;
         }
     }
+    .preloader {
+        width: 64px;
+        margin: -30px auto 60px;
+        box-shadow: none;
+    }
 }
+
 
 .card_title {
     height: 155px;
@@ -304,6 +315,7 @@ main {
     }
     p {
         font-size: 16px;
+        white-space: nowrap;
         @include mobile {
             font-size: 14px;
         }
@@ -381,9 +393,11 @@ main {
     }
     ul {
         display: flex;
+        overflow: hidden;
+        margin: 0 auto;
         li {
             color: $darkGray;
-            padding: 0 10px;
+            padding: 0 7px;
         }
     }
 }
@@ -404,6 +418,18 @@ body {
 
 .abled {
     color: $darkGray;
+}
+
+#prev {
+    @include mobile {
+        display: none;
+    }
+}
+
+#next {
+    @include mobile {
+        display: none;
+    }
 }
 
 // footer
@@ -434,4 +460,8 @@ footer {
 // Display None
 .height-0 {
     height: 0;
+}
+
+.d-none {
+    display: none;
 }
