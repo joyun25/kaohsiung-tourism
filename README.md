@@ -1,4 +1,4 @@
-# 六角學院切版作業
+# 六角學院作業
 版型皆出自 [六角學院](https://www.hexschool.com/)線上課程作業，僅作切版練習
 
 ### 高雄旅遊網：[Github Pages](https://joyun25.github.io/tourism-searching-engine-using-javascript/)
