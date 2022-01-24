@@ -10,7 +10,7 @@ const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const btnToTop = document.querySelector('.to_top');
 const xhr = new XMLHttpRequest();
-const zone = ['楠梓區', '左營區', '鼓山區', '三民區', '苓雅區', '新興區', '前金區', '鹽埕區', '前鎮區', '旗津區', '小港區', '鳳山區', '茂林區', '甲仙區', '六龜區', '杉林區', '美濃區', '內門區', '仁武區', '田寮區', '旗山區', '梓官區', '阿蓮區', '湖內區', '岡山區', '茄萣區', '路竹區', '鳥松區', '永安區', '燕巢區', '大樹區', '大寮區', '林園區', '彌陀區', '橋頭區', '大社區', '那瑪夏區', '桃源區'];
+const zone = ['全區', '楠梓區', '左營區', '鼓山區', '三民區', '苓雅區', '新興區', '前金區', '鹽埕區', '前鎮區', '旗津區', '小港區', '鳳山區', '茂林區', '甲仙區', '六龜區', '杉林區', '美濃區', '內門區', '仁武區', '田寮區', '旗山區', '梓官區', '阿蓮區', '湖內區', '岡山區', '茄萣區', '路竹區', '鳥松區', '永安區', '燕巢區', '大樹區', '大寮區', '林園區', '彌陀區', '橋頭區', '大社區', '那瑪夏區', '桃源區'];
 let data;
 let singlePageData;
 let results;
@@ -70,7 +70,11 @@ function renderChoice(e) {
         e.preventDefault();
         input.innerHTML = e.target.textContent + '<img src="assets/icons_down.png" alt="dropdown arrow">';
         resultsTitle.textContent = e.target.textContent;
-        results = data.filter(item => item.Zone === e.target.textContent);
+        if (e.target.textContent === '全區') {
+            results = data;
+        }else{
+            results = data.filter(item => item.Zone === e.target.textContent);
+        }
         renderData();
     }else{
         return
@@ -254,6 +258,7 @@ xhr.onload = function() {
                 dataItem.Ticketinfo = '無資訊'
             }
         });
+        resultsTitle.textContent = '全區';
         results = data;
         renderData();
     }else{
